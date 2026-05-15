@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Anton&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-slate-950: #020617;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-blue-500: #3b82f6;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 overflow-hidden;
+  }
+}
+
+@layer components {
+  .theme-gradient-bg {
+    @apply absolute inset-0 opacity-10 pointer-events-none;
+  }
+  
+  .blob-blue {
+    @apply absolute top-[-10%] left-[-5%] w-[40%] h-[120%] bg-blue-500 blur-[120px] rounded-full;
+  }
+  
+  .blob-red {
+    @apply absolute bottom-[-10%] right-[-5%] w-[40%] h-[120%] bg-red-600 blur-[120px] rounded-full;
+  }
+
+  .skew-tag {
+    @apply bg-red-600 flex items-center justify-center rotate-3 skew-x-12;
+  }
+  
+  .skew-tag-inner {
+    @apply -skew-x-12 -rotate-3;
+  }
+}
